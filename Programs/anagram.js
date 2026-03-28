@@ -1,23 +1,32 @@
-const isAnagram = (str1, str2) => {
-  if (str1.length !== str2.length) return false;
+function isAnagram(str1, str2) {
+    // Step 1: length check
+    if (str1.length !== str2.length) {
+        return false;
+    }
 
-  const count = {};
+    // Step 2: create frequency object
+    let count = {};
 
-  // count characters of first string
-  for (let i = 0; i < str1.length; i++) {
-    const char = str1[i];
-    count[char] = (count[char] || 0) + 1;
-  }
+    // Step 3: count characters from str1
+    for (let i = 0; i < str1.length; i++) {
+        let char = str1[i];
+        count[char] = (count[char] || 0) + 1;
+    }
 
-  // match with second string
-  for (let i = 0; i < str2.length; i++) {
-    const char = str2[i];
+    // Step 4: decrease count using str2
+    for (let i = 0; i < str2.length; i++) {
+        let char = str2[i];
 
-    if (!count[char]) return false; // not found
-    count[char]--;
-  }
+        if (!count[char]) {
+            return false;
+        }
 
-  return true;
-};
+        count[char]--;
+    }
 
+    return true;
+}
+
+// Test
 console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("hello", "world"));   // false
