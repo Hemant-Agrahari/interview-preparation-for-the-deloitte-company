@@ -20,7 +20,7 @@ console.log(reverseANumber(12345))
 
 
 input : "Hemant Agrahari"
-output : "tnameh iraharga"
+output : "tnameH irahargA"
 
 function reverseWords(str) {
     return str
