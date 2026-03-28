@@ -17,3 +17,32 @@ const reverseANumber = (number)=>{
     return reverse
 }
 console.log(reverseANumber(12345))
+
+
+input : "Hemant Agrahari"
+output : "tnameh iraharga"
+
+function reverseWords(str) {
+    return str
+        .toLowerCase()
+        .split(" ")
+        .map(word => word.split("").reverse().join(""))
+        .join(" ");
+}
+
+// Example
+console.log(reverseWords("Hemant Agrahari"));
+// Output: "tnameh iraharga"
+
+inpur:"hemant agrahari"
+output: "Hemant Agrahari"
+
+function capitalizeWords(str) {
+    return str
+        .split(" ")
+        .map(word => word[0].toUpperCase() + word.slice(1))
+        .join(" ");
+}
+
+// Example
+console.log(capitalizeWords("hemant agrahari"));
